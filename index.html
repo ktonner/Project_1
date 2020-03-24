@@ -25,6 +25,46 @@
       <div class="level">
         <div class="column is-6">
       <h1 class="level-item">Beer</h1>
+
+          <hr>
+
+      <!--The dropdown for beer-->
+      <div class="level-item">
+      <!--This "dropdown is active is going to need a click listener-->
+      <div class="dropdown is-active">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>Beer Type</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <a href="#" class="dropdown-item">
+              Stout
+            </a>
+            <a class="dropdown-item">
+              Lagger
+            </a>
+            <a href="#" class="dropdown-item is-active">
+              IPA
+            </a>
+            <a href="#" class="dropdown-item">
+              Porter
+            </a>
+            <a href="#" class="dropdown-item">
+              Pilsner
+            </a>
+            <a href="#" class="dropdown-item">
+              Sours
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
       </div>
       <div class="column is-6">
       <h1 class="level-item">Wine</h1>
