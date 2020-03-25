@@ -2,7 +2,7 @@ console.log("hooked up")
 
 
 
-$(document).ready(function () {
+    $(document).ready(function () {
     $(".click").click(function (e) {
         e.preventDefault();
         
