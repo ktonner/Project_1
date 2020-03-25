@@ -35,8 +35,8 @@ $(document).ready(function () {
 
 
 
-//Dropdown menu click
-$(".dropdown").on("click", function () {
-    $(".dropdown").addClass("is-active")
-})
+// //Dropdown menu click
+// $(".dropdown").on("click", function () {
+//     $(".dropdown").addClass("is-active")
+// })
 
