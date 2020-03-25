@@ -13,7 +13,7 @@ $(document).ready(function () {
             console.log(lat + "and" + long);
             var winery = $("inputText").val();
             //Query for google places
-            const queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=500&types=" + winery + "&key=AIzaSyD9Ff1tE0-VCQ6xdBVIecM05QkaMPvHlGU"
+            const queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=500&types=" + winery + "&key=AIzaSyAQqhU1drEdGVTniZuVfGDUclDmUIC4MSo"
             //AJAX Call to Places API
             $.ajax({
                 url: queryURL,
