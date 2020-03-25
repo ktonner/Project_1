@@ -19,6 +19,22 @@
             $.ajax({ url: queryURL, method: 'GET' }).then(function (response) {
                 console.log(response);
             });
+
+            //THIS IS FOR THE WINE BUTTON --KATHLEEN
+            $("#wine").on("click", function(){
+                // navigator.geolocation.getCurrentPosition((position) => {
+                    var lat = position.coords.latitude;
+                    var long = position.coords.longitude;
+                    
+                    var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=9000&keyword=" + "wine" + "&key=AIzaSyAQqhU1drEdGVTniZuVfGDUclDmUIC4MSo"
+                    
+                    $.ajax({
+                        url: queryURL,
+                        method: 'GET'
+                    }).then(function (response) {
+                        console.log(response);
+                    });
+                    })
         });
     })
 
@@ -39,6 +55,8 @@ navigator.geolocation.getCurrentPosition((position) => {
     //AJAX Call to Places API
     $.ajax({ url: queryURL, method: 'GET' }).then(function (response) {
         console.log(response);
+
+        
     });
 });
 ;
@@ -65,3 +83,9 @@ $(window).click(function () {
     $(".dropdown").removeClass("is-active")
     console.log($(".dropdown").class())
 })
+
+
+//FOR THE WINE BUTTON
+
+//Kathleen working down here
+
