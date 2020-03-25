@@ -58,7 +58,10 @@ $(window).click(function () {
 
 //clicking on a beer sets the value
 ($(".dropdown-item")).on("click", function(){
+    event.preventDefault();
     $(event.target).addClass("is-active")
-    beerChoice = event.target.text 
-    console.log($(".dropdown-title").innerHTML)
+    beerChoice = event.target.text
+    console.log(beerChoice) 
+    $(".dropdown").removeClass("is-active")
+    console.log($(".dropdown").class())
 })
