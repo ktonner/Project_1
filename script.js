@@ -126,7 +126,7 @@ data.forEach(beer => {
         </div>
         <div class="media-content">
           <p class="title is-4">${beer.brewery.name}</p>
-          <p class="subtitle is-6">${beer.brewery.desciption}</p>
+          <p class="subtitle is-6">${beer.brewery.website}</p>
         </div>
       </div>
 
