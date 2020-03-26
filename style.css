@@ -2,6 +2,7 @@ body{
     background-image:url(images/light-veneer.png)
 }
 
+
 h1 {
     font-size: 30px;
 }
@@ -14,6 +15,8 @@ footer {
     margin-top:10px;
 }
 
-#display-case{
-    margin:2px;
+
+
+img{
+    margin:auto;
 }
