@@ -26,23 +26,38 @@ $(document).ready(function () {
                 //showStuffOnThePage();
             });
         })
+          
+ $("#beer-button").on("click", function(){
+    for(i = 0; i <= 5, i++){
+       var box = $("<container>")
+       var title = response[i].title
+       box.append($("<h1>").text(title))
 
-        //THIS IS FOR THE WINE BUTTON --KATHLEEN
-        $("#wine").on("click", function () {
-            // navigator.geolocation.getCurrentPosition((position) => {
-            var lat = position.coords.latitude;
-            var long = position.coords.longitude;
+       var box = $("<container>")
+       var steeetAddress = response[i].streetAddress
+       box.append($("<h2>").text(streetAddress))
+   
+       $("#display-case").append(box)
+    }
+   
+    })
 
-            var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=9000&keyword=" + "wine" + "&key=AIzaSyAQqhU1drEdGVTniZuVfGDUclDmUIC4MSo"
+        // //THIS IS FOR THE WINE BUTTON --KATHLEEN
+        // $("#wine").on("click", function () {
+        //     // navigator.geolocation.getCurrentPosition((position) => {
+        //     var lat = position.coords.latitude;
+        //     var long = position.coords.longitude;
 
-            $.ajax({
-                url: queryURL,
-                method: 'GET'
-            }).then(function (response) {
-                console.log(response);
-            });
+        //     var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=9000&keyword=" + "wine" + "&key=AIzaSyAQqhU1drEdGVTniZuVfGDUclDmUIC4MSo"
 
-        })
+        //     $.ajax({
+        //         url: queryURL,
+        //         method: 'GET'
+        //     }).then(function (response) {
+        //         console.log(response);
+        //     });
+
+        // })
 
 
 
