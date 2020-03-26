@@ -75,7 +75,7 @@ const getPlaces = (lat,lng) => {
         })} 
         const getBreweries=()=>{
             //!!!! DO NOT TOUCH THIS, I WILL WORK ON THIS TOMORROW - KATHLEEN
-            const queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + "Winter_Springs"
+            const queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + "Daytona_beach"
             console.log(queryURL);
             //AJAX Call to Brewery API
             $.ajax({ url: queryURL, method: 'GET' }).then(function (response) {
@@ -137,9 +137,9 @@ $(window).click(function () {
     beerChoice = event.target.text
     console.log(beerChoice)
     $(".dropdown").removeClass("is-active")
-});
-    });
-});
+})
+    })
+})
 
 
 //function to grab brewery results
