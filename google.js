@@ -27,15 +27,16 @@ $(document).ready(function () {
             method: 'GET'
         }).then(function (response) {
             //console.log(response);
-
+            // choose the nearest 5 location
             for (var i = 0; i < 5; i++) {
                 var element = response.results[i];
                 console.log(element);
-
+                // append the name and the nearest location on the card div
                 var div = $("<p>").addClass("card-name").text(element.name);
                 var location = $("<p>").addClass("card-location").text(element.vicinity);
                 var images1 = $("<img>").attr("src", element.icon)
-                $("#wineSelection").append(div, location, images1); ``
+                // put them on the html page
+                $("#wineSelection").append(div, location, images1); 
 
             }
         });
