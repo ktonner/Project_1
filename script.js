@@ -13,10 +13,9 @@ $(document).ready(function () {
             console.log(response);
         });
 
-        //when the user selects a beer...
-        $(".dropdown-item").on("click", function () {
-            var pour = $(".dropdown-item").text
-            //!!!! DO NOT TOUCH THIS, I WILL WORK ON THIS TOMORROW - KATHLEEN
+        //When the beer button is clicked
+        $("#beer-btn").on("click", function () {
+            console.log("click")
             var queryURL = "https://cors-anywhere.herokuapp.com/https://api.brewerydb.com/v2/search/geo/point?lat=" + lat + "&lng=" + long + "&radius=40&key=c400eb8346467f09e19ffeff274b1b6a"
             console.log(queryURL);
             //AJAX Call to Brewery API
@@ -32,6 +31,7 @@ $(document).ready(function () {
        var box = $("<container>")
        var title = response[i].title
        box.append($("<h1>").text(title))
+
 
        var box = $("<container>")
        var steeetAddress = response[i].streetAddress
@@ -56,6 +56,23 @@ $(document).ready(function () {
         //     }).then(function (response) {
         //         console.log(response);
         //     });
+
+
+        //THIS IS FOR THE WINE BUTTON --KATHLEEN
+        // $("#wine").on("click", function () {
+        //     // navigator.geolocation.getCurrentPosition((position) => {
+        //     var lat = position.coords.latitude;
+        //     var long = position.coords.longitude;
+
+        //     var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=9000&keyword=" + "wine" + "&key=AIzaSyAQqhU1drEdGVTniZuVfGDUclDmUIC4MSo"
+
+        //     $.ajax({
+        //         url: queryURL,
+        //         method: 'GET'
+        //     }).then(function (response) {
+        //         console.log(response);
+        //     });
+
 
         // })
 

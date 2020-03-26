@@ -1,99 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.css" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
 </head>
+
 <body>
-  
-    <style src></style>
-    <section class="hero is-light is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            <i class="fas fa-glass-cheers"></i>Hops & Grapes
-          </h1>
-        </div>
-      </div>
-    </section>
 
-    <div class = "column is-three-fifths is-offset-one-fifth">
-      <div class="level">
-        <div class="column is-6">
-      <h1 class="level-item">Beer</h1>
-      <img src="https://www.netclipart.com/pp/m/16-163935_beer-hop-clipart-png-download-beer-hop-clipart.png" alt="HopLeaf" width="150px" height="150px">
-
-          <hr>
-
-      <!--The dropdown for beer-->
-      <div class="level-item">
-      <!--This "dropdown is active is going to need a click listener-->
-      <div class="dropdown">
-        <div class="dropdown-trigger">
-          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-            <span class = drop-title>Pour me a...</span>
-            <span class="icon is-small">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </div>
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-          <div class="dropdown-content">
-            <a href="#" class="dropdown-item">
-              Stout
-            </a>
-            <a class="dropdown-item">
-              Lager
-            </a>
-            <a href="#" class="dropdown-item">
-              IPA
-            </a>
-            <a href="#" class="dropdown-item">
-              Porter
-            </a>
-            <a href="#" class="dropdown-item">
-              Pilsner
-            </a>
-            <a href="#" class="dropdown-item">
-              Sour
-            </a>
-          </div>
-        </div>
+  <style src></style>
+  <section class="hero is-light is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          <i class="fas fa-glass-cheers"></i>Hops & Grapes
+        </h1>
       </div>
     </div>
+  </section>
+
+  <div class="column is-three-fifths is-offset-one-fifth">
+    <div class="level">
+      <div class="column is-6">
+        <h1 class="level-item">Beer</h1>
+        <img src="https://www.netclipart.com/pp/m/16-163935_beer-hop-clipart-png-download-beer-hop-clipart.png"
+          alt="HopLeaf" width="150px" height="150px">
+
+        <hr>
+        <button class="button" id="beer-btn">Pour me a stout!</button>
 
       </div>
       <div class="column is-6">
-      <h1 class="level-item">Wine</h1>
-      <img src="http://clipart-library.com/img/1331560.png" alt="Grapes" width ="150px" height="150px">
-      <hr>
-      <button class="button" id="wine">I need a glass</button>
+        <h1 class="level-item">Wine</h1>
+        <!-- <img src="/images/grape.png" alt="grapes" width="150px" height="150px"> -->
+        <hr>
+        <button class="button" id="wine">I need a glass</button>
 
-      <div id="wineSelection"></div>
+        <div id="wineSelection"></div>
+
+
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>
-    </div>
   </div>
+    <!--The Display Case for the results-->
+    <div class="column is-12" id="display-case">
+   <!--PUT YOUR RESULTS DISPLAY HERE-->
+    </div>
+  
+
 
   <footer class="footer has-background-grey-lighter	">
     <div class="content has-text-centered">
       <p>
-        <strong>Hops&Grapes</strong> by Alcoholikz 2020</a>. 
+        <strong>Hops&Grapes</strong> by Alcoholikz 2020</a>.
       </p>
     </div>
   </footer>
-  
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-    <script src = "script.js"></script>
-    <script src="google.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src = "script.js"></script>
+  <script src="google.js"></script>
 </body>
+
 </html>
