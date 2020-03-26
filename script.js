@@ -85,12 +85,10 @@ const getPlaces = (lat,lng) => {
             });   
 }})
 
-       var queryURL = "https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/search/geo/point?lat=" + lat + "&lng=" +long+"&radius=10&key=59f4cee9ab8d9017113fe1a5520db79b";
+       var queryURL = "https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/search/geo/point?lat=" + lat + long +"&radius=10&key=59f4cee9ab8d9017113fe1a5520db79b";
        $.ajax({ url: queryURL, 
-            method: 'GET' }).then(function (response) {
-            console.log(response);
-        }
-        )
+            method: 'GET' }).then(function (response) { 
+        
 
         //THIS IS FOR THE WINE BUTTON --KATHLEEN
         $("#wine").on("click", function () {
@@ -141,4 +139,6 @@ $(window).click(function () {
 
 
 //function to grab brewery results
-
+    })
+    })
+})
