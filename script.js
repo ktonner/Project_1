@@ -1,46 +1,27 @@
 $(document).ready(function () {
     //no refresh
-
-    //get the users position from the geolocation API
-    navigator.geolocation.getCurrentPosition((position) => {
-        const lat = position.coords.latitude;
-        const long = position.coords.longitude;
-        console.log(lat + "and" + long);
-        //Query for google places
-        var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=500&types=wine&key=AIzaSyBRbn4-RYBysbGOiH11a0r5xu4NLIwM4iA"
-        //AJAX Call to Places API
-        $.ajax({ url: queryURL, method: 'GET' }).then(function (response) {
-            console.log(response);
-        });
-
-        //When the beer button is clicked
-        $("#beer-btn").on("click", function () {
-            console.log("click")
-            var queryURL = "https://cors-anywhere.herokuapp.com/https://api.brewerydb.com/v2/search/geo/point?lat=" + lat + "&lng=" + long + "&radius=40&key=c400eb8346467f09e19ffeff274b1b6a"
-            console.log(queryURL);
-            //AJAX Call to Brewery API
-            $.ajax({ url: queryURL, method: 'GET' }).then(function (response) {
-                console.log(response);
-                //ToDo Show the DATA on the HTML
-                //showStuffOnThePage();
-            });
-        })
+       //When the beer button is clicked
+       $("#beer-btn").on("click", function () {
+           callApi();
+ 
+    });
+ 
           
- $("#beer-button").on("click", function(){
-    for(i = 0; i <= 5, i++){
-       var box = $("<container>")
-       var title = response[i].title
-       box.append($("<h1>").text(title))
+//  $("#beer-button").on("click", function(){
+//     for(i = 0; i <= 5, i++;){
+//        var box = $("<container>")
+//        var title = response[i].title
+//        box.append($("<h1>").text(title))
 
 
-       var box = $("<container>")
-       var steeetAddress = response[i].streetAddress
-       box.append($("<h2>").text(streetAddress))
+//        var box = $("<container>")
+//        var steeetAddress = response[i].streetAddress
+//        box.append($("<h2>").text(streetAddress))
    
-       $("#display-case").append(box)
-    }
+//        $("#display-case").append(box)
+//     }
    
-    })
+//     })
 
         // //THIS IS FOR THE WINE BUTTON --KATHLEEN
         // $("#wine").on("click", function () {
@@ -81,19 +62,82 @@ $(document).ready(function () {
 
         //Dropdown Menu JS
         //clicking on the menu opens it
-        $(".dropdown").on("click", function () {
-            event.stopPropagation();
-            $(".dropdown").addClass("is-active")
+        // $(".dropdown").on("click", function () {
+        //     event.stopPropagation();
+        //     $(".dropdown").addClass("is-active")
 
-        })
-        //if you click off the menu it closes
-        $(window).click(function () {
-            $(".dropdown").removeClass("is-active")
+        // })
+        // //if you click off the menu it closes
+        // $(window).click(function () {
+        //     $(".dropdown").removeClass("is-active")
+        // });
+
+        // //if you click off the menu it closes
+        // $(window).click(function () {
+        //     $(".dropdown").removeClass("is-active")
+        // })
+    
+})
+
+function callApi(){
+       //get the users position from the geolocation API
+       navigator.geolocation.getCurrentPosition((position) => {
+        const lat = position.coords.latitude;
+        const long = position.coords.longitude;
+        console.log(lat + "and" + long);
+        // //Query for google places
+        // var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=500&types=wine&key=AIzaSyBRbn4-RYBysbGOiH11a0r5xu4NLIwM4iA"
+        // //AJAX Call to Places API
+        // $.ajax({ url: queryURL, method: 'GET' }).then(function (response) {
+        //     console.log(response);
+        // });
+
+
+
+
+        console.log("click")
+        var queryURL = "https://cors-anywhere.herokuapp.com/https://api.brewerydb.com/v2/search/geo/point?lat=" + lat + "&lng=" + long + "&radius=40&key=c400eb8346467f09e19ffeff274b1b6a"
+        console.log(queryURL);
+        //AJAX Call to Brewery API
+        $.ajax({ url: queryURL, method: 'GET' }).then(function (response) {
+            console.log(response);
+            createBeerCards(response.data);
+            //ToDo Show the DATA on the HTMLs
+            //showStuffOnThePage();
         });
 
-        //if you click off the menu it closes
-        $(window).click(function () {
-            $(".dropdown").removeClass("is-active")
-        })
-    })
-})
+
+    });
+
+}
+
+function createBeerCards(data){
+
+data.forEach(beer => {
+   let card =  `
+    <div class="card">
+
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img src="${beer.brewery.images.icon}" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">${beer.brewery.name}</p>
+          <p class="subtitle is-6">${beer.brewery.desciption}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    
+    `;
+
+    $('#beerCards').append(card)
+
+});
+
+
+}
