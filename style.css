@@ -1,5 +1,7 @@
-body{
-    background-image:url(images/light-veneer.png)
+
+
+hr{
+    border:1px solid black;
 }
 
 
@@ -12,7 +14,6 @@ footer {
     padding: 20px;
     bottom: 0;
     height: 20px;
-    margin-top:10px;
 }
 
 
