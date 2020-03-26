@@ -40,7 +40,7 @@ navigator.geolocation.getCurrentPosition((position) => {
     //AJAX Call to Places API
     $.ajax({ url: queryURL, method: 'GET' }).then(function (response) {
         console.log(response);
-=======
+
 
 
 //get the users position from the geolocation API
@@ -130,14 +130,16 @@ $(window).click(function () {
     beerChoice = event.target.text 
     console.log($(".dropdown-title").innerHTML)
 })
-=======
+
 ($(".dropdown-item")).on("click", function () {
     event.preventDefault();
     $(event.target).addClass("is-active")
     beerChoice = event.target.text
     console.log(beerChoice)
     $(".dropdown").removeClass("is-active")
-})
+});
+    });
+});
 
 
 //function to grab brewery results
