@@ -1,3 +1,7 @@
+body{
+    background-image:url(images/light-veneer.png)
+}
+
 h1 {
     font-size: 30px;
 }
@@ -6,10 +10,10 @@ footer {
     width: 100%;
     padding: 20px;
     bottom: 0;
-    height: 50px;
+    height: 20px;
     margin-top:10px;
 }
 
-.column{
+#display-case{
     margin:2px;
 }
