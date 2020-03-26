@@ -1,12 +1,10 @@
-.navbar{
-    height: 200px;
+h1 {
+    font-size: 30px;
 }
-
-.footer {
+footer {
     position: fixed;
-    text-align: center;
-    left: 0;
-    bottom: 0;
     width: 100%;
-    background-color: gray;
+    padding: 20px;
+    bottom: 0;
+    height: 50px;
 }
