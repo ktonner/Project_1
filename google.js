@@ -17,6 +17,7 @@ $(document).ready(function () {
     $("#wine").click(function (e) {
         e.preventDefault();
         console.log(lat + "and" + long + "inside of the click");
+        $("wineSelection").empty()
 
         var winery = "wine"
         //Query for google places
@@ -27,15 +28,17 @@ $(document).ready(function () {
             method: 'GET'
         }).then(function (response) {
             //console.log(response);
-
+            // loop for the five nearest location
             for (var i = 0; i < 5; i++) {
                 var element = response.results[i];
                 console.log(element);
-
+                
+                // append them on a card div
                 var div = $("<p>").addClass("card-name").text(element.name);
                 var location = $("<p>").addClass("card-location").text(element.vicinity);
                 var images1 = $("<img>").attr("src", element.icon)
-                $("#wineSelection").append(div, location, images1); ``
+                // append the five location on the html
+                $("#wineSelection").append(div, location, images1); 
 
             }
         });
