@@ -126,7 +126,7 @@ function createBeerCards(data) {
         </div>
         <div class="media-content">
           <p class="title is-4">${beer.brewery.name}</p>
-          <p class="subtitle is-6">${beer.brewery.website}</p>
+          <p class="subtitle is-6">${beer.brewery.description}</p>
         </div>
       </div>
 
