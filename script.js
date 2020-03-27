@@ -1,87 +1,87 @@
 $(document).ready(function () {
     //no refresh
-       //When the beer button is clicked
-       $("#beer-btn").on("click", function () {
-           callApi();
- 
+    //When the beer button is clicked
+    $("#beer-btn").on("click", function () {
+        callApi();
+
     });
- 
-          
-//  $("#beer-button").on("click", function(){
-//     for(i = 0; i <= 5, i++;){
-//        var box = $("<container>")
-//        var title = response[i].title
-//        box.append($("<h1>").text(title))
 
 
-//        var box = $("<container>")
-//        var steeetAddress = response[i].streetAddress
-//        box.append($("<h2>").text(streetAddress))
-   
-//        $("#display-case").append(box)
-//     }
-   
-//     })
-
-        // //THIS IS FOR THE WINE BUTTON --KATHLEEN
-        // $("#wine").on("click", function () {
-        //     // navigator.geolocation.getCurrentPosition((position) => {
-        //     var lat = position.coords.latitude;
-        //     var long = position.coords.longitude;
-
-        //     var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=9000&keyword=" + "wine" + "&key=AIzaSyAQqhU1drEdGVTniZuVfGDUclDmUIC4MSo"
-
-        //     $.ajax({
-        //         url: queryURL,
-        //         method: 'GET'
-        //     }).then(function (response) {
-        //         console.log(response);
-        //     });
+    //  $("#beer-button").on("click", function(){
+    //     for(i = 0; i <= 5, i++;){
+    //        var box = $("<container>")
+    //        var title = response[i].title
+    //        box.append($("<h1>").text(title))
 
 
-        //THIS IS FOR THE WINE BUTTON --KATHLEEN
-        // $("#wine").on("click", function () {
-        //     // navigator.geolocation.getCurrentPosition((position) => {
-        //     var lat = position.coords.latitude;
-        //     var long = position.coords.longitude;
+    //        var box = $("<container>")
+    //        var steeetAddress = response[i].streetAddress
+    //        box.append($("<h2>").text(streetAddress))
 
-        //     var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=9000&keyword=" + "wine" + "&key=AIzaSyAQqhU1drEdGVTniZuVfGDUclDmUIC4MSo"
+    //        $("#display-case").append(box)
+    //     }
 
-        //     $.ajax({
-        //         url: queryURL,
-        //         method: 'GET'
-        //     }).then(function (response) {
-        //         console.log(response);
-        //     });
+    //     })
+
+    // //THIS IS FOR THE WINE BUTTON --KATHLEEN
+    // $("#wine").on("click", function () {
+    //     // navigator.geolocation.getCurrentPosition((position) => {
+    //     var lat = position.coords.latitude;
+    //     var long = position.coords.longitude;
+
+    //     var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=9000&keyword=" + "wine" + "&key=AIzaSyAQqhU1drEdGVTniZuVfGDUclDmUIC4MSo"
+
+    //     $.ajax({
+    //         url: queryURL,
+    //         method: 'GET'
+    //     }).then(function (response) {
+    //         console.log(response);
+    //     });
 
 
-        // })
+    //THIS IS FOR THE WINE BUTTON --KATHLEEN
+    // $("#wine").on("click", function () {
+    //     // navigator.geolocation.getCurrentPosition((position) => {
+    //     var lat = position.coords.latitude;
+    //     var long = position.coords.longitude;
+
+    //     var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=9000&keyword=" + "wine" + "&key=AIzaSyAQqhU1drEdGVTniZuVfGDUclDmUIC4MSo"
+
+    //     $.ajax({
+    //         url: queryURL,
+    //         method: 'GET'
+    //     }).then(function (response) {
+    //         console.log(response);
+    //     });
+
+
+    // })
 
 
 
 
-        //Dropdown Menu JS
-        //clicking on the menu opens it
-        // $(".dropdown").on("click", function () {
-        //     event.stopPropagation();
-        //     $(".dropdown").addClass("is-active")
+    //Dropdown Menu JS
+    //clicking on the menu opens it
+    // $(".dropdown").on("click", function () {
+    //     event.stopPropagation();
+    //     $(".dropdown").addClass("is-active")
 
-        // })
-        // //if you click off the menu it closes
-        // $(window).click(function () {
-        //     $(".dropdown").removeClass("is-active")
-        // });
+    // })
+    // //if you click off the menu it closes
+    // $(window).click(function () {
+    //     $(".dropdown").removeClass("is-active")
+    // });
 
-        // //if you click off the menu it closes
-        // $(window).click(function () {
-        //     $(".dropdown").removeClass("is-active")
-        // })
-    
+    // //if you click off the menu it closes
+    // $(window).click(function () {
+    //     $(".dropdown").removeClass("is-active")
+    // })
+
 })
 
-function callApi(){
-       //get the users position from the geolocation API
-       navigator.geolocation.getCurrentPosition((position) => {
+function callApi() {
+    //get the users position from the geolocation API
+    navigator.geolocation.getCurrentPosition((position) => {
         const lat = position.coords.latitude;
         const long = position.coords.longitude;
         console.log(lat + "and" + long);
@@ -111,10 +111,10 @@ function callApi(){
 
 }
 
-function createBeerCards(data){
-
-data.forEach(beer => {
-   let card =  `
+function createBeerCards(data) {
+    $("#display-case").empty()
+    data.forEach(beer => {
+        let card = `
     <div class="card">
 
     <div class="card-content">
@@ -135,9 +135,9 @@ data.forEach(beer => {
     
     `;
 
-    $('#beerCards').append(card)
+        $('#display-case').append(card)
 
-});
+    });
 
 
 }
