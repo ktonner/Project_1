@@ -17,7 +17,7 @@ $(document).ready(function () {
     $("#wine").click(function (e) {
         e.preventDefault();
         console.log(lat + "and" + long + "inside of the click");
-        $("wineSelection").empty()
+        $("#display-case").empty()
 
         var winery = "wine"
         //Query for google places
@@ -38,7 +38,7 @@ $(document).ready(function () {
                 var location = $("<p>").addClass("card-location").text(element.vicinity);
                 var images1 = $("<img>").attr("src", element.icon)
                 // append the five location on the html
-                $("#wineSelection").append(div, location, images1); 
+                $("#display-case").append(div, location, images1); 
 
             }
         });
