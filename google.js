@@ -19,9 +19,11 @@ $(document).ready(function () {
         console.log(lat + "and" + long + "inside of the click");
         $("#display-case").empty()
 
-        var winery = "liquor_store"
+        var winery = "wine"
         //Query for google places
-        const queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=5000&types=" + winery + "&key=AIzaSyD9Ff1tE0-VCQ6xdBVIecM05QkaMPvHlGU"
+
+        const queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=8000&keyword=" + winery + "&key=AIzaSyD9Ff1tE0-VCQ6xdBVIecM05QkaMPvHlGU"
+
         //AJAX Call to Places API
         $.ajax({
             url: queryURL,
