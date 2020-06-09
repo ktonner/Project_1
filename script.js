@@ -16,7 +16,7 @@ function callApi() {
     console.log(lat + "and" + long);
     //display info
     console.log("click")
-    // var queryURL = "https://cors-anywhere.herokuapp.com/https://api.brewerydb.com/v2/search/geo/point?lat=" + lat + "&lng=" + long + "&radius=40&key=c400eb8346467f09e19ffeff274b1b6a"
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.brewerydb.com/v2/search/geo/point?lat=" + lat + "&lng=" + long + "&radius=40&key=c400eb8346467f09e19ffeff274b1b6a"
     // console.log(queryURL);
     //AJAX Call to Brewery API
     $.ajax({ url: queryURL, method: 'GET' }).then(function (response) {
